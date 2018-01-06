@@ -53,7 +53,7 @@ void MainGame::gameLoop()
 	{
 		oldTime = newTime;
 		newTime = SDL_GetPerformanceCounter();
-		float deltaTime = (newTime - oldTime) / SDL_GetPerformanceFrequency();
+		float deltaTime = (newTime - oldTime) / SDL_GetPerformanceFrequency() / 100; //milliseconds
 		//std::cout << "old: " << oldTime << std::endl << "new: " << newTime << std::endl << "delta: " << deltaTime << std::endl;
 
 		processInput(deltaTime);
@@ -126,7 +126,7 @@ void MainGame::CalculateCollisions()
 			if (md1->CanCollide() && md2->CanCollide())
 			{
 				//calculate distances and check for collision, if so, notify both objects that the collision happened
-				float dis = glm::float_distance(md1->GetTransform().GetPos(), md2->GetTransform().GetPos());
+				float dis = glm::distance(*md1->GetTransform().GetPos(), *md2->GetTransform().GetPos()); //need to dereference the Transform component
 				if (dis < md1->GetColliderRadius() || dis < md2->GetColliderRadius())
 				{
 					md1->OnCollision(md2);

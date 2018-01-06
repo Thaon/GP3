@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GP3", "..\Tre\Tre\Tre.vcxproj", "{D246FDDF-B30E-4F14-80F8-095FA4E04ECF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GP3", "GP3\GP3.vcxproj", "{C72F2844-BAD0-4D53-8535-F238CAF8E2F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D246FDDF-B30E-4F14-80F8-095FA4E04ECF}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D246FDDF-B30E-4F14-80F8-095FA4E04ECF}.Debug|Win32.Build.0 = Debug|Win32
-		{D246FDDF-B30E-4F14-80F8-095FA4E04ECF}.Release|Win32.ActiveCfg = Release|Win32
-		{D246FDDF-B30E-4F14-80F8-095FA4E04ECF}.Release|Win32.Build.0 = Release|Win32
+		{C72F2844-BAD0-4D53-8535-F238CAF8E2F9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C72F2844-BAD0-4D53-8535-F238CAF8E2F9}.Debug|Win32.Build.0 = Debug|Win32
+		{C72F2844-BAD0-4D53-8535-F238CAF8E2F9}.Release|Win32.ActiveCfg = Release|Win32
+		{C72F2844-BAD0-4D53-8535-F238CAF8E2F9}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

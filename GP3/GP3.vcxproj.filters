@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\GP3\GP3\Display.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\GameController.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\MainGame.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\Mesh.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\Model.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\obj_loader.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\Scene.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\SceneManager.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\Shader.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\Texture.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GP3\GP3\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\GP3\GP3\Camera.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\Common.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\Display.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\GameController.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\MainGame.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\Mesh.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\Model.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\obj_loader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\Scene.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\SceneManager.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\Shader.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\Texture.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\transform.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\GP3\GP3\TestGO.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{d9223914-a688-4dba-978b-90e3fc11f141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cpp">
+      <UniqueIdentifier>{27601277-ccce-4a96-a08c-91102af43016}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{f0b976d4-a2fd-4961-9894-56640ba6cb12}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

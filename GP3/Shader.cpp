@@ -15,7 +15,7 @@ Shader::Shader(const std::string& filename)
 
 	glBindAttribLocation(program, 0, "position"); // associate attribute variable with our shader program attribute (in this case attribute vec3 position;)
 	glBindAttribLocation(program, 1, "normal");
-	glBindAttribLocation(program, 2, "texCoord"); 
+	glBindAttribLocation(program, 2, "texCoord");
 	glBindAttribLocation(program, 3, "color");
 
 
@@ -26,11 +26,11 @@ Shader::Shader(const std::string& filename)
 	CheckShaderError(program, GL_VALIDATE_STATUS, true, "Error: Shader program not valid");
 
 	uniforms[TRANSFORM_U] = glGetUniformLocation(program, "MVP"); // associate with the location of uniform variable within a program
-	uniforms[VIEWPROJECTION] = glGetUniformLocation(program, "viewProj"); // associate with the location of uniform variable within a program
+	uniforms[MODELMATRIX] = glGetUniformLocation(program, "modelMatrix");
 	uniforms[CAMPOSITION] = glGetUniformLocation(program, "camPos");
 	uniforms[TIME] = glGetUniformLocation(program, "time");
-	uniforms[BURNVALUE] = glGetUniformLocation(program, "burnValue");
-	uniforms[COLOR] = glGetUniformLocation(program, "vertColor");
+	uniforms[LIGHTDIR] = glGetUniformLocation(program, "lightDir");
+	uniforms[INTENSITY] = glGetUniformLocation(program, "lightIntensity");
 }
 
 
@@ -54,14 +54,17 @@ void Shader::Update(const Transform& transform, const Camera& camera, float delt
 	m_timeElapsed += deltaTime;
 	glm::vec3 cameraPosition = camera.GetPosition();
 	glm::mat4 mvp = camera.GetViewProjection() * transform.GetModel();
-	glm::mat4 view = camera.GetViewProjection();
+	glm::mat4 model = transform.GetModel();
 	//glm::mat4 camPos = camera.GetViewProjection();
 
+	glm::vec3 lightPosition = glm::vec3(0, 45, 45);
+
 	glUniformMatrix4fv(uniforms[TRANSFORM_U], 1, GLU_FALSE, &mvp[0][0]);
-	glUniformMatrix4fv(uniforms[VIEWPROJECTION], 1, GLU_FALSE, &view[0][0]);
+	glUniformMatrix4fv(uniforms[MODELMATRIX], 1, GLU_FALSE, &model[0][0]);
 	glUniform3fv(uniforms[CAMPOSITION], 1, &cameraPosition[0]);
-	glUniform1f(uniforms[TIME], m_timeElapsed);
-	glUniform1f(uniforms[BURNVALUE], burn);
+	//glUniform1f(uniforms[TIME], m_timeElapsed);
+	glUniform3fv(uniforms[LIGHTDIR], 1, &lightPosition[0]);
+	glUniform1f(uniforms[INTENSITY], 1);
 }
 
 

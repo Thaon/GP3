@@ -14,7 +14,8 @@ int main(int argc, char** argv) //argument used to call SDL main
 	
 	//Load models and textures, if using false on the UseInternalTextures parameter
 	TestGO nano;
-	nano.InitModel("island", "../res/island/island.obj", true);
+	nano.InitModel("island", "res/tree/tree.obj", false);
+	nano.AddExternalTexture("res/tree/treetex.png");
 
 	/*Model monkey("monkey", "../res/monkey3.obj", false);
 	monkey.AddExternalTexture("../res/bricks.jpg");
@@ -23,7 +24,7 @@ int main(int argc, char** argv) //argument used to call SDL main
 	Model alien("Alien", "../res/Hominid/alienhominid.obj", true);*/
 
 	//Load in the shader
-	Shader burnshader("../res/shader"); //burn shader
+	Shader burnshader("res/shader"); //burn shader
 
 	//bind the shader to the models
 	nano.SetShader(&burnshader);

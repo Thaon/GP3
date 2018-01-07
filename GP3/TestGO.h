@@ -9,6 +9,8 @@ public:
 	void Start() override
 	{
 		std::cout << "Called Start!" << std::endl;
+		Audio::LoadSound("MenuMusic", "res/menu.wav");
+		Audio::PlaySound("MenuMusic", true);
 	}
 
 	void Update(float deltaTime) override

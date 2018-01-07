@@ -42,6 +42,9 @@ void MainGame::initSystems()
 	//initialize input
 	Input::Init();
 
+	//and audio
+	Audio::Init();
+
 	//call Start on all objects in the scene
 	for (auto model : SceneManager::GetActiveScene()->GetModels())
 	{

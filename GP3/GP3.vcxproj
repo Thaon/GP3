@@ -24,6 +24,7 @@
     <ClInclude Include="..\..\GP3\GP3\TestGO.h" />
     <ClInclude Include="..\..\GP3\GP3\Texture.h" />
     <ClInclude Include="..\..\GP3\GP3\transform.h" />
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +38,7 @@
     <ClCompile Include="..\..\GP3\GP3\SceneManager.cpp" />
     <ClCompile Include="..\..\GP3\GP3\Shader.cpp" />
     <ClCompile Include="..\..\GP3\GP3\Texture.cpp" />
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Input.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -105,7 +107,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;opengl32.lib;glew32.lib;assimp.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;opengl32.lib;glew32.lib;assimp.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

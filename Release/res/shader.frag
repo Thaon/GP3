@@ -27,5 +27,5 @@ void main()
 		color = vec4(0.1,0.1,0.1,1.0);
 
 
-	fragCol = color;//vec4(texture(texture_diffuse1,uv.xy).rgb, 1.0);
+	fragCol = color * texture2D(texture_diffuse1, uv.xy);
 }

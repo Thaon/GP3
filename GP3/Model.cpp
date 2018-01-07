@@ -95,15 +95,19 @@ Mesh Model::processMesh(aiMesh * mesh, const aiScene * scene)
 			vertex.normal = vector;
 		}
 		// Texture Coordinates
+		glm::vec2 vec;
 		if (mesh->mTextureCoords != nullptr) // Does the mesh contain texture coordinates?
 		{
-			glm::vec2 vec;
 			// A vertex can contain up to 8 different texture coordinates. We thus make the assumption that we won't 
 			// use models where a vertex can have multiple texture coordinates so we always take the first set (0).
 			vec.x = mesh->mTextureCoords[0][i].x;
 			vec.y = mesh->mTextureCoords[0][i].y;
 			vertex.texCoord = vec;
 		}
+		else
+			vertex.texCoord = glm::vec2(0.0f, 0.0f);
+		//std::cout << vec.x << " - " << vec.y << std::endl;
+
 		//vertex color
 		for (int j = 0; j < AI_MAX_NUMBER_OF_COLOR_SETS; j++)
 		{
@@ -127,8 +131,6 @@ Mesh Model::processMesh(aiMesh * mesh, const aiScene * scene)
 				vertex.color = vector;
 			}
 		}
-		else
-			vertex.texCoord = glm::vec2(0.0f, 0.0f);
 
 		vertices.push_back(vertex);
 	}
@@ -147,6 +149,7 @@ Mesh Model::processMesh(aiMesh * mesh, const aiScene * scene)
 	if (m_useInternalTextures && mesh->mMaterialIndex >= 0)
 	{
 		aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+		//std::cout << scene->mMaterials[0]->GetTextureCount(aiTextureType_DIFFUSE) << std::endl;
 		// We assume a convention for sampler names in the shaders. Each diffuse texture should be named
 		// as 'texture_diffuseN' where N is a sequential number ranging from 1 to MAX_SAMPLER_NUMBER. 
 		// Same applies to other texture as the following list summarizes:
@@ -161,7 +164,6 @@ Mesh Model::processMesh(aiMesh * mesh, const aiScene * scene)
 		std::vector<Texture> specularMaps = this->loadMaterialTextures(material, aiTextureType_SPECULAR, "texture_specular");
 		textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 	}
-
 	// Return a mesh object created from the extracted mesh data
 	return Mesh(vertices, indices, textures);
 }

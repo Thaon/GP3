@@ -11,6 +11,15 @@ public:
 		std::cout << "Called Start!" << std::endl;
 		Audio::LoadSound("MenuMusic", "res/menu.wav");
 		Audio::PlaySound("MenuMusic", true);
+		GetTransform().SetScale(glm::vec3(0.2, 0.2, 0.2));
+
+		for (auto mesh : meshes)
+		{
+			for (auto vert : mesh.vertices)
+			{
+				std::cout << vert.texCoord.x << " - " << vert.texCoord.y << std::endl;
+			}
+		}
 	}
 
 	void Update(float deltaTime) override

@@ -21,23 +21,19 @@ void Mesh::SetupMesh()
 
 	// Vertex Positions
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-		(GLvoid*)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),	(GLvoid*)0);
 
 	// Vertex Normals
 	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-		(GLvoid*)offsetof(Vertex, normal));
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),	(GLvoid*)offsetof(Vertex, normal));
 
 	// Vertex Texture Coords
 	glEnableVertexAttribArray(2);
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-		(GLvoid*)offsetof(Vertex, texCoord));
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),	(GLvoid*)offsetof(Vertex, texCoord));
 
 	// Vertex Color
 	glEnableVertexAttribArray(3);
-	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-		(GLvoid*)offsetof(Vertex, color));
+	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),	(GLvoid*)offsetof(Vertex, color));
 
 	glBindVertexArray(0);
 }
@@ -68,10 +64,10 @@ void Mesh::Draw(Shader shader)
 			ss << specularNr++; // Transfer GLuint to stream
 		number = ss.str();
 
-		glUniform1i(glGetUniformLocation(shader.GetProgram(), (name + number).c_str()), i);
 		glBindTexture(GL_TEXTURE_2D, this->textures[i].id);
+		glUniform1i(glGetUniformLocation(shader.GetProgram(), (name + number).c_str()), i);
 	}
-	glActiveTexture(GL_TEXTURE0);
+	//glActiveTexture(GL_TEXTURE0);
 
 	// Draw mesh
 	glBindVertexArray(this->VAO);

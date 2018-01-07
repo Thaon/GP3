@@ -19,6 +19,34 @@ Scene::~Scene()
 {
 }
 
+void Scene::LoadFromFile(std::string filename)
+{
+	//open the file and read all lines in memory
+	std::vector<std::string> levelLines;
+
+	std::ifstream file(filename);
+	if (file.is_open())
+	{
+		std::string line;
+		while (std::getline(file, line))
+		{
+			levelLines.push_back(line);
+		}
+		file.close();
+	}
+	else
+	{
+		std::cout << "could not open level" << std::endl;
+		return;
+	}
+	//go through the lines, create and customise objects
+	for (auto line : levelLines)
+	{
+		//
+	}
+
+}
+
 void Scene::AddModel(Model * mesh)
 {
 	m_models.push_back(mesh);

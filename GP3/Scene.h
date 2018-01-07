@@ -3,6 +3,8 @@
 #include "Common.h"
 #include "Model.h"
 
+#include <fstream>
+
 /***
 	The Scene class offers a way to manage models in a structured way.
 	It essentially is just a collection of references to Models that are imported in the game (preferably in the main function).
@@ -18,6 +20,7 @@ public:
 	Scene();
 	~Scene();
 
+	void LoadFromFile(std::string filename);
 	void AddModel(Model* mesh);
 	Model* GetModel(int index);
 	Model* GetModel(std::string m_name);

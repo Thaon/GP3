@@ -14,7 +14,7 @@ int main(int argc, char** argv) //argument used to call SDL main
 	
 	//Load models and textures, if using false on the UseInternalTextures parameter
 	TestGO nano;
-	nano.InitModel("island", "res/island/island.obj", false);
+	nano.InitModel("Tree", "res/Tree/tree.obj", true);
 	//nano.AddExternalTexture("res/tree/treetex.png");
 
 	/*Model monkey("monkey", "../res/monkey3.obj", false);

@@ -27,7 +27,6 @@ void MainGame::InitDisplay(int width, int height, glm::vec4 clearColour)
 void MainGame::run()
 {
 	initSystems();
-	m_controller.Start();
 	gameLoop();
 }
 
@@ -39,6 +38,9 @@ void MainGame::SetActiveCamera(Camera* camera)
 void MainGame::initSystems()
 {
 	oldTime = newTime = m_burnAmount = 0;
+
+	//initialize input
+	Input::Init();
 
 	//call Start on all objects in the scene
 	for (auto model : SceneManager::GetActiveScene()->GetModels())
@@ -57,7 +59,6 @@ void MainGame::gameLoop()
 		//std::cout << "old: " << oldTime << std::endl << "new: " << newTime << std::endl << "delta: " << deltaTime << std::endl;
 
 		processInput(deltaTime);
-		m_controller.Update(deltaTime);
 
 		//call Update on all objects in the scene
 		for (auto model : SceneManager::GetActiveScene()->GetModels())
@@ -85,19 +86,15 @@ void MainGame::processInput(float delta)
 				/* Check the SDLKey values and move change the coords */
 				switch (evnt.key.keysym.sym)
 				{
-				case SDLK_LEFT:
-					m_burning = false;
-					break;
-				case SDLK_RIGHT:
-					m_burning = true;
-					break;
-				case SDLK_SPACE:
-					m_burning = !m_burning;
-					break;
 				case SDLK_ESCAPE:
 					m_gameState = GameState::EXIT;
 					break;
 				}
+				Input::m_keyStates[evnt.key.keysym.scancode] = true;
+				break;
+			case SDL_KEYUP:
+				Input::m_keyStates[evnt.key.keysym.scancode] = false;
+				break;
 		}
 	}
 	

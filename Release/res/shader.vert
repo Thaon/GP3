@@ -23,8 +23,8 @@ void main()
 tex = texCoord;
 	vec3 norm = (modelMatrix * vec4(normal, 1.0)).xyz;
 
-	vec3 lightDirection = vec3(90,90,0);
+	vec3 lightDirection = vec3(90,0,0);
 
-	lightColor = dot(lightDir, normalize(norm)) * lightIntensity;
+	lightColor = dot(lightDirection, normalize(norm)) * lightIntensity;
 	gl_Position = MVP * vec4(position, 1.0);
 }

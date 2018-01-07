@@ -2,9 +2,8 @@
 
 #include "Common.h"
 
-#include "Display.h" 
-
-#include "GameController.h"
+#include "Display.h"
+#include "SceneManager.h"
 
 /***
 	The MainGame class acts as a hub between all the systems and handles them, enabling the game to be initialized, configured and run.
@@ -33,8 +32,6 @@ private:
 	Display* m_gameDisplay;
 	Camera* m_activeCam;
 	GameState m_gameState;
-
-	GameController m_controller;
 
 	float oldTime, m_burnAmount, newTime;
 	bool m_burning = false;

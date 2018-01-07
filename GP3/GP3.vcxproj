@@ -14,7 +14,6 @@
     <ClInclude Include="..\..\GP3\GP3\Camera.h" />
     <ClInclude Include="..\..\GP3\GP3\Common.h" />
     <ClInclude Include="..\..\GP3\GP3\Display.h" />
-    <ClInclude Include="..\..\GP3\GP3\GameController.h" />
     <ClInclude Include="..\..\GP3\GP3\MainGame.h" />
     <ClInclude Include="..\..\GP3\GP3\Mesh.h" />
     <ClInclude Include="..\..\GP3\GP3\Model.h" />
@@ -25,10 +24,10 @@
     <ClInclude Include="..\..\GP3\GP3\TestGO.h" />
     <ClInclude Include="..\..\GP3\GP3\Texture.h" />
     <ClInclude Include="..\..\GP3\GP3\transform.h" />
+    <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\GP3\GP3\Display.cpp" />
-    <ClCompile Include="..\..\GP3\GP3\GameController.cpp" />
     <ClCompile Include="..\..\GP3\GP3\main.cpp" />
     <ClCompile Include="..\..\GP3\GP3\MainGame.cpp" />
     <ClCompile Include="..\..\GP3\GP3\Mesh.cpp" />
@@ -38,6 +37,7 @@
     <ClCompile Include="..\..\GP3\GP3\SceneManager.cpp" />
     <ClCompile Include="..\..\GP3\GP3\Shader.cpp" />
     <ClCompile Include="..\..\GP3\GP3\Texture.cpp" />
+    <ClCompile Include="Input.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C72F2844-BAD0-4D53-8535-F238CAF8E2F9}</ProjectGuid>

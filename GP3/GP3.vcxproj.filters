@@ -4,9 +4,6 @@
     <ClCompile Include="..\..\GP3\GP3\Display.cpp">
       <Filter>Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\GP3\GP3\GameController.cpp">
-      <Filter>Cpp</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\GP3\GP3\MainGame.cpp">
       <Filter>Cpp</Filter>
     </ClCompile>
@@ -32,6 +29,9 @@
       <Filter>Cpp</Filter>
     </ClCompile>
     <ClCompile Include="..\..\GP3\GP3\main.cpp" />
+    <ClCompile Include="Input.cpp">
+      <Filter>Cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\GP3\GP3\Camera.h">
@@ -41,9 +41,6 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\GP3\GP3\Display.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\GP3\GP3\GameController.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\GP3\GP3\MainGame.h">
@@ -75,6 +72,9 @@
     </ClInclude>
     <ClInclude Include="..\..\GP3\GP3\TestGO.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

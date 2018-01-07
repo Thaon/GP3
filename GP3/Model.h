@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Mesh.h"
+#include "Input.h"
 
 //some code taken from: https://learnopengl.com/#!Model-Loading/Model
 

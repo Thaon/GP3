@@ -13,7 +13,8 @@ public:
 
 	void Update(float deltaTime) override
 	{
-		GetTransform().Rotate(45 * deltaTime, glm::vec3(0, 1, 0));
+		if (Input::KeyPressed(SDL_SCANCODE_SPACE))
+			GetTransform().Rotate(45 * deltaTime, glm::vec3(0, 1, 0));
 	}
 
 	void OnCollision(Model* collider) override

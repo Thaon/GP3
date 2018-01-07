@@ -35,6 +35,9 @@
     <ClCompile Include="Audio.cpp">
       <Filter>Cpp</Filter>
     </ClCompile>
+    <ClCompile Include="StaticModel.h">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\GP3\GP3\Camera.h">

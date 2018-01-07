@@ -46,6 +46,7 @@ public:
 	inline glm::vec3* GetScale() { return &scale; }
 
 	inline void SetPos(glm::vec3& pos) { this->pos = pos; } // setters
+	inline void Move(glm::vec3& pos) { this->pos += glm::vec3(pos.x, pos.y, pos.z); }
 	inline void SetScale(glm::vec3& scale) { this->scale = scale; }
 	inline void SetRotation(glm::vec3 change)
 	{

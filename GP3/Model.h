@@ -29,6 +29,7 @@ public:
 	}
 	void Draw(Shader shader);
 	std::string GetName() { return m_name; }
+	void SetName(std::string name) { m_name = name; }
 	void SetShader(Shader* shader);
 	Shader* GetShader() { return m_shader; }
 	Transform& GetTransform() { return m_transform; }
@@ -43,6 +44,8 @@ public:
 	virtual void Start() = 0;
 	virtual void Update(float deltaTime) = 0;
 	virtual void OnCollision(Model* collider) = 0;
+
+	bool m_isCamera = false;
 
 protected:
 	/*  Model Data  */

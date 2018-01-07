@@ -42,7 +42,56 @@ void Scene::LoadFromFile(std::string filename)
 	//go through the lines, create and customise objects
 	for (auto line : levelLines)
 	{
-		//
+		Model* mod;
+
+		std::vector<std::string> sections = Split(line, '~');
+
+		//check the type based on name
+		if (Split(sections[1], ',')[0] == "Player")
+			mod = new TestGO;
+		else
+			mod = new StaticModel();
+
+		//0 is the object type
+		if (sections[0] == "obj")
+		{
+			//1 is the name and location of the model
+			std::vector<std::string> modelSections = Split(sections[1], ',');
+			mod->InitModel(modelSections[0], (GLchar*)modelSections[1].c_str(), true);
+
+			//2 is position
+			std::vector<std::string> position = Split(sections[2], ',');
+			mod->GetTransform().SetPos(glm::vec3(std::stof(position[0]), std::stof(position[1]), std::stof(position[2])));
+
+			//3 is rotation
+			std::vector<std::string> rotation = Split(sections[3], ',');
+			mod->GetTransform().SetRotation(glm::vec3(std::stof(rotation[0]), std::stof(rotation[1]), std::stof(rotation[2])));
+
+			//4 is scaling
+			std::vector<std::string> scaling = Split(sections[4], ',');
+			mod->GetTransform().SetScale(glm::vec3(std::stof(scaling[0]), std::stof(scaling[1]), std::stof(scaling[2])));
+
+			//5 is the collider
+			mod->SetupCollisions(std::stof(sections[5]));
+
+			//add to active scene
+			AddModel(mod);
+		}
+		else if (sections[0] == "cam")
+		{
+			mod->SetName("Camera");
+			mod->m_isCamera = true;
+			//2 is position
+			std::vector<std::string> position = Split(sections[2], ',');
+			mod->GetTransform().SetPos(glm::vec3(std::stof(position[0]), std::stof(position[1]), std::stof(position[2])));
+
+			//3 is rotation
+			std::vector<std::string> rotation = Split(sections[3], ',');
+			mod->GetTransform().SetRotation(glm::vec3(std::stof(rotation[0]), std::stof(rotation[1]), std::stof(rotation[2])));
+
+			//add to active scene
+			AddModel(mod);
+		}
 	}
 
 }

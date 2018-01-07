@@ -28,6 +28,18 @@ public:
 
 	inline void SetPosition(glm::vec3 pos) { this->pos = pos; }
 
+	inline void LookAt(glm::vec3 position)
+	{
+		this->forward = glm::normalize(position - pos);
+	}
+
+	inline void SetRotation(float x, float y, float z)
+	{
+		glRotatef(z, 0.0f, 0.0f, 1.0f);
+		glRotatef(y, 0.0f, 1.0, 0.0f);
+		glRotatef(x, 1.0f, 0.0f, 0.0f);
+	}
+
 	glm::vec3 GetPosition() const { return this->pos; }
 
 protected:

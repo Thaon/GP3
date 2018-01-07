@@ -40,6 +40,7 @@
     <ClCompile Include="..\..\GP3\GP3\Texture.cpp" />
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="StaticModel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C72F2844-BAD0-4D53-8535-F238CAF8E2F9}</ProjectGuid>

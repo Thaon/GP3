@@ -63,9 +63,23 @@ void MainGame::gameLoop()
 
 		processInput(deltaTime);
 
+		CalculateCollisions();
+
 		//call Update on all objects in the scene
 		for (auto model : SceneManager::GetActiveScene()->GetModels())
 		{
+			if (model->m_isCamera)
+			{
+				m_activeCam->SetPosition(*model->GetTransform().GetPos());
+				//m_activeCam->SetRotation(model->GetTransform().GetRot()->x, model->GetTransform().GetRot()->y, model->GetTransform().GetRot()->z);
+				//std::cout << m_activeCam->GetPosition().x << " - " << m_activeCam->GetPosition().y << " - " << m_activeCam->GetPosition().z << std::endl;
+
+			}
+			if (model->GetName() == "Player")
+			{
+				m_activeCam->LookAt(*model->GetTransform().GetPos());
+			}
+
 			model->Update(deltaTime);
 		}
 

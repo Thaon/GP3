@@ -13,8 +13,8 @@ int main(int argc, char** argv) //argument used to call SDL main
 
 	
 	//Load models and textures, if using false on the UseInternalTextures parameter
-	TestGO nano;
-	nano.InitModel("Tree", "res/Tree/tree.obj", true);
+	//TestGO nano;
+	//nano.InitModel("Tree", "res/Tree/tree.obj", true);
 	//nano.AddExternalTexture("res/tree/treetex.png");
 
 	/*Model monkey("monkey", "../res/monkey3.obj", false);
@@ -24,19 +24,31 @@ int main(int argc, char** argv) //argument used to call SDL main
 	Model alien("Alien", "../res/Hominid/alienhominid.obj", true);*/
 
 	//Load in the shader
-	Shader burnshader("res/shader"); //burn shader
+	Shader toonShader("res/shader"); //toon shader
 
 	//bind the shader to the models
-	nano.SetShader(&burnshader);
+	//nano.SetShader(&burnshader);
 
 	//create camera and set it as the main active one
 	Camera cam;
-	cam.initCamera(glm::vec3(0, 1, -5), 70.0f, float(width / height), 0.01f, 1000.0f);
+	cam.initCamera(glm::vec3(0, 0, 0), 70.0f, float(width / height), 0.01f, 1000.0f);
 	mainGame.SetActiveCamera(&cam);
 
 	//create scene and add models
 	SceneManager::CreateScene("Scene1");
-	SceneManager::GetActiveScene()->AddModel(&nano);
+	SceneManager::GetActiveScene()->LoadFromFile("res/Level.txt");
+	
+	//set up shader for each model
+	for (auto model : SceneManager::GetActiveScene()->GetModels())
+	{
+		model->SetShader(&toonShader);
+		std::cout << model->GetColliderRadius() << std::endl;
+	}
+
+	//cam.SetPosition(glm::vec3(7,5,-3));
+	//cam.LookAt(*SceneManager::GetActiveScene()->GetModel("Tree")->GetTransform().GetPos());
+
+	//SceneManager::GetActiveScene()->AddModel(&nano);
 
 	//finally run game
 	mainGame.run();

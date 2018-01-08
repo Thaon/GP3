@@ -57,7 +57,7 @@ void Shader::Update(const Transform& transform, const Camera& camera, float delt
 	glm::mat4 model = transform.GetModel();
 	//glm::mat4 camPos = camera.GetViewProjection();
 
-	glm::vec3 lightPosition = glm::vec3(0, 45, 45);
+	glm::vec3 lightPosition = glm::vec3(45, 45, 0);
 
 	glUniformMatrix4fv(uniforms[TRANSFORM_U], 1, GLU_FALSE, &mvp[0][0]);
 	glUniformMatrix4fv(uniforms[MODELMATRIX], 1, GLU_FALSE, &model[0][0]);

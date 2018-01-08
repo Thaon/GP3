@@ -3,29 +3,29 @@
 
 void Model::Draw(Shader shader)
 {
-	if (m_useInternalTextures)
-	{
+	//if (m_useInternalTextures)
+	//{
 		for (GLuint i = 0; i < this->meshes.size(); i++)
 			meshes[i].Draw(shader);
-	}
-	else
-	{
-		GLuint diffuseNr = 1;
-		for (GLuint i = 0; i < this->meshes.size(); i++)
-		{
-			for (GLuint j = 0; j < this->m_loadedTextures.size(); j++)
-			{
-				std::string number = std::to_string(m_loadedTextures[j].id);
-				glUniform1i(glGetUniformLocation(shader.GetProgram(), ("texture_diffuse" + number).c_str()), j);
-				glActiveTexture(GL_TEXTURE0 + j); // Activate proper texture unit before binding
-												  // Retrieve texture number (the N in diffuse_textureN)
-				glBindTexture(GL_TEXTURE_2D, this->m_loadedTextures[j].id);
-			}
+	//}
+	//else
+	//{
+	//	GLuint diffuseNr = 1;
+	//	for (GLuint i = 0; i < this->meshes.size(); i++)
+	//	{
+	//		for (GLuint j = 0; j < this->m_loadedTextures.size(); j++)
+	//		{
+	//			std::string number = std::to_string(m_loadedTextures[j].id);
+	//			glUniform1i(glGetUniformLocation(shader.GetProgram(), ("texture_diffuse" + number).c_str()), m_loadedTextures[j].id);
+	//			glActiveTexture(GL_TEXTURE0 + j); // Activate proper texture unit before binding
+	//											  // Retrieve texture number (the N in diffuse_textureN)
+	//			glBindTexture(GL_TEXTURE_2D, this->m_loadedTextures[j].id);
+	//		}
 
 
-			meshes[i].OnlyDrawMesh(shader);
-		}
-	}
+	//		meshes[i].OnlyDrawMesh(shader);
+	//	}
+	//}
 }
 
 void Model::SetShader(Shader* shader)

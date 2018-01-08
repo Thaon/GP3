@@ -37,7 +37,6 @@ public:
 	/*  Functions  */
 	Mesh(std::vector<Vertex> vertices, std::vector<GLuint> indices, std::vector<Texture> textures);
 	void Draw(Shader shader);
-	void OnlyDrawMesh(Shader shader);
 private:
 	/*  Render data  */
 	GLuint VAO, VBO, EBO;

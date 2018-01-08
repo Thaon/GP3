@@ -17,6 +17,11 @@ Scene::Scene()
 
 Scene::~Scene()
 {
+	for (auto model : m_models)
+	{
+		delete model;
+	}
+	m_models.clear();
 }
 
 void Scene::LoadFromFile(std::string filename)

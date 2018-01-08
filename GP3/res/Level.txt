@@ -2,3 +2,15 @@ obj~Tree,res/Tree/tree.obj~0,0,0~0,0,0~1,1,1~1
 cam~Camera,NULL~8.244263,15.0051,-7.411302~0.3835413,-0.371236,0.1719702~1,1,1
 obj~Player,res/Cube/cube.obj~-3.77,0.17,-5.72~0,0,0~1,1,1~0.5
 obj~Tree2,res/Tree2/treelow.obj~4.03,0,-9.88~0,0,0~1,1,1~1
+obj~Ground,res/Ground/ground.obj~0,0,0~0,0,0~1,1,1~0.1
+obj~Thorns,res/Thorns/thornslow.obj~12,0,-9~0,0,0~1,1,1~1.61
+obj~Thorns,res/Thorns/thornslow.obj~15,0,-9~0,0,0~1,1,1~1.61
+obj~Thorns,res/Thorns/thornslow.obj~18,0,-9~0,0,0~1,1,1~1.61
+obj~Thorns,res/Thorns/thornslow.obj~21,0,-9~0,0,0~1,1,1~1.61
+obj~Thorns,res/Thorns/thornslow.obj~24,0,-9~0,0,0~1,1,1~1.61
+obj~Ground,res/Ground/ground.obj~20,0,0~0,0,0~1,1,1~0.1
+obj~Ground,res/Ground/ground.obj~40,0,0~0,0,0~1,1,1~0.1
+obj~Ground,res/Ground/ground.obj~0,0,-20~0,0,0~1,1,1~0.1
+obj~Rock,res/Rock/rocklow.obj~-3.57,0.88,5.26~0,0,0.7213324~3,3,3~3.6
+obj~Rock,res/Rock/rocklow.obj~0.3,4.04,5.26~0.3555982,0.370356,0.6189967~3,3,3~3.6
+obj~Rock,res/Rock/rocklow.obj~5.29,2.11,4.11~-0.9061021,-0.3970833,0.1359557~3,3,3~3.6

@@ -6,7 +6,7 @@ class TestGO : public Model
 {
 public:
 
-	float m_speed = 1;
+	float m_speed = 3;
 	float m_startingHeight = 0;
 	float m_yVelocity = 0;
 	bool m_jumping = false;
@@ -69,7 +69,7 @@ public:
 	void OnCollision(Model* collider) override
 	{
 		GetTransform().SetPos(m_previousPos);
-		collider->Destroy();
+		//collider->Destroy();
 	}
 
 

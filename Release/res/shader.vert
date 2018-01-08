@@ -15,16 +15,15 @@ out vec2 tex;
 out vec4 col;
 out vec3 cameraPos;
 out vec3 vertexPos;
+out float lightInt;
 
 out float lightColor;
 
 void main()
 {
 	tex = texCoord;
-	vec3 norm = (modelMatrix * vec4(normal, 1.0)).xyz;
-
-	vec3 lightDirection = vec3(90,0,0);
-
-	lightColor = dot(lightDirection, normalize(norm)) * lightIntensity;
+	vec3 norm = normal;
+	lightInt = lightIntensity;
+	lightColor = dot(normalize(lightDir), normalize(norm));
 	gl_Position = MVP * vec4(position, 1.0);
 }

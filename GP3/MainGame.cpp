@@ -86,28 +86,15 @@ void MainGame::gameLoop()
 		drawGame(deltaTime);
 
 		//clean up the scene from models marked for destruction
-		//std::vector<Model*> newScene;
 		for (int i = 0; i < SceneManager::GetActiveScene()->GetModels().size(); i++)
 		{
 			if (SceneManager::GetActiveScene()->GetModels()[i] != nullptr && SceneManager::GetActiveScene()->GetModels()[i]->m_markedForDestruction)
 			{
 				std::cout << "Destroying object: " << SceneManager::GetActiveScene()->GetModels().at(i)->GetName() << std::endl;
 				delete SceneManager::GetActiveScene()->GetModels()[i];
-
-				//delete SceneManager::GetActiveScene()->GetModels()[i];
 				SceneManager::GetActiveScene()->GetModels().erase(SceneManager::GetActiveScene()->GetModels().begin() + i);
 			}
-			//else
-				//newScene.push_back(SceneManager::GetActiveScene()->GetModels()[i]);
 		}
-		/*if (SceneManager::GetActiveScene()->GetModels().size() != newScene.size())
-		{
-			std::cout << "Old scene : " << SceneManager::GetActiveScene()->GetModels().size() << std::endl;
-			std::cout << "new scene : " << newScene.size() << std::endl;
-		}
-		SceneManager::GetActiveScene()->GetModels().clear();
-		SceneManager::GetActiveScene()->GetModels() = newScene;
-		newScene.clear();*/
 	}
 }
 

@@ -7,6 +7,8 @@ class CameraPlaceholder : public Model
 {
 public:
 
+	bool m_cam1Active = false;
+
 	Model* m_player;
 
 	void Start() override;

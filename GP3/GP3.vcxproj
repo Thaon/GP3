@@ -25,6 +25,7 @@
     <ClInclude Include="..\..\GP3\GP3\Texture.h" />
     <ClInclude Include="..\..\GP3\GP3\transform.h" />
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="CameraPlaceholder.h" />
     <ClInclude Include="Input.h" />
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +40,7 @@
     <ClCompile Include="..\..\GP3\GP3\Shader.cpp" />
     <ClCompile Include="..\..\GP3\GP3\Texture.cpp" />
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="CameraPlaceholder.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="StaticModel.h" />
   </ItemGroup>

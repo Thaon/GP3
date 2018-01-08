@@ -39,6 +39,7 @@ public:
 	void SetupCollisions(float radius);
 	bool CanCollide() { return m_calculateCollisions; }
 	float GetColliderRadius() { return m_colliderRadius; }
+	void Destroy() { m_markedForDestruction = true; }
 
 	/*  Methods to inherit  */
 	virtual void Start() = 0;
@@ -46,6 +47,8 @@ public:
 	virtual void OnCollision(Model* collider) = 0;
 
 	bool m_isCamera = false;
+
+	bool m_markedForDestruction = false; //this will remove the object from the scene once it's time
 
 protected:
 	/*  Model Data  */

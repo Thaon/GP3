@@ -4,6 +4,7 @@
 #include "Model.h"
 #include "StaticModel.h"
 #include "TestGO.h"
+#include "CameraPlaceholder.h"
 
 #include <fstream>
 #include <sstream>
@@ -28,7 +29,7 @@ public:
 	Model* GetModel(int index);
 	Model* GetModel(std::string m_name);
 	std::string GetName() { return m_name; }
-	std::vector<Model*> GetModels() { return m_models; }
+	std::vector<Model*> &GetModels() { return m_models; }
 
 private:
 	std::vector<Model*> m_models;

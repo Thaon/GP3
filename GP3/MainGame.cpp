@@ -68,14 +68,14 @@ void MainGame::gameLoop()
 		//call Update on all objects in the scene
 		for (auto model : SceneManager::GetActiveScene()->GetModels())
 		{
-			if (model->m_isCamera)
+			if (model->m_isCamera) //update the camera position based on the "Camera" object in the scene
 			{
 				m_activeCam->SetPosition(*model->GetTransform().GetPos());
 				//m_activeCam->SetRotation(model->GetTransform().GetRot()->x, model->GetTransform().GetRot()->y, model->GetTransform().GetRot()->z);
 				//std::cout << m_activeCam->GetPosition().x << " - " << m_activeCam->GetPosition().y << " - " << m_activeCam->GetPosition().z << std::endl;
 
 			}
-			if (model->GetName() == "Player")
+			if (model->GetName() == "Player") //setup the camera to look at the player at all times
 			{
 				m_activeCam->LookAt(*model->GetTransform().GetPos());
 			}
@@ -84,6 +84,30 @@ void MainGame::gameLoop()
 		}
 
 		drawGame(deltaTime);
+
+		//clean up the scene from models marked for destruction
+		//std::vector<Model*> newScene;
+		for (int i = 0; i < SceneManager::GetActiveScene()->GetModels().size(); i++)
+		{
+			if (SceneManager::GetActiveScene()->GetModels()[i] != nullptr && SceneManager::GetActiveScene()->GetModels()[i]->m_markedForDestruction)
+			{
+				std::cout << "Destroying object: " << SceneManager::GetActiveScene()->GetModels().at(i)->GetName() << std::endl;
+				delete SceneManager::GetActiveScene()->GetModels()[i];
+
+				//delete SceneManager::GetActiveScene()->GetModels()[i];
+				SceneManager::GetActiveScene()->GetModels().erase(SceneManager::GetActiveScene()->GetModels().begin() + i);
+			}
+			//else
+				//newScene.push_back(SceneManager::GetActiveScene()->GetModels()[i]);
+		}
+		/*if (SceneManager::GetActiveScene()->GetModels().size() != newScene.size())
+		{
+			std::cout << "Old scene : " << SceneManager::GetActiveScene()->GetModels().size() << std::endl;
+			std::cout << "new scene : " << newScene.size() << std::endl;
+		}
+		SceneManager::GetActiveScene()->GetModels().clear();
+		SceneManager::GetActiveScene()->GetModels() = newScene;
+		newScene.clear();*/
 	}
 }
 

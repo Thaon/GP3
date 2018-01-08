@@ -47,10 +47,16 @@ void Scene::LoadFromFile(std::string filename)
 		std::vector<std::string> sections = Split(line, '~');
 
 		//check the type based on name
-		if (Split(sections[1], ',')[0] == "Player")
+		std::string objName = Split(sections[1], ',')[0];
+		std::cout << "Creating object: " << objName << std::endl;
+
+		if (objName == "Player")
 			mod = new TestGO;
+		else if (objName == "Camera")
+			mod = new CameraPlaceholder();
 		else
 			mod = new StaticModel();
+
 
 		//0 is the object type
 		if (sections[0] == "obj")

@@ -10,7 +10,7 @@ public:
 	float m_startingHeight = 0;
 	float m_yVelocity = 0;
 	bool m_jumping = false;
-
+	glm::vec3 m_previousPos; //for collision resolution
 
 	void Start() override
 	{
@@ -24,11 +24,13 @@ public:
 
 	void Update(float deltaTime) override
 	{
+		m_previousPos = *GetTransform().GetPos();
+
 		if (Input::KeyPressed(SDL_SCANCODE_RIGHT))
-			GetTransform().Move(glm::vec3(m_speed * deltaTime, 0, 0));
+			GetTransform().Move(glm::vec3(-m_speed * deltaTime, 0, 0));
 
 		if (Input::KeyPressed(SDL_SCANCODE_LEFT))
-			GetTransform().Move(glm::vec3(-m_speed * deltaTime, 0, 0));
+			GetTransform().Move(glm::vec3(m_speed * deltaTime, 0, 0));
 
 		if (Input::KeyPressed(SDL_SCANCODE_UP))
 			GetTransform().Move(glm::vec3(0, 0, m_speed * deltaTime));
@@ -66,7 +68,8 @@ public:
 
 	void OnCollision(Model* collider) override
 	{
-		std::cout << "Collided with " << collider->GetName() << std::endl;
+		GetTransform().SetPos(m_previousPos);
+		collider->Destroy();
 	}
 
 

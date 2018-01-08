@@ -30,7 +30,9 @@ public:
 
 	inline void LookAt(glm::vec3 position)
 	{
+		//glm::vec3 right = glm::cross(this->forward, this->up);
 		this->forward = glm::normalize(position - pos);
+		//this->up = glm::cross(this->forward, right);
 	}
 
 	inline void SetRotation(float x, float y, float z)

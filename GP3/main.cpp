@@ -42,7 +42,7 @@ int main(int argc, char** argv) //argument used to call SDL main
 	for (auto model : SceneManager::GetActiveScene()->GetModels())
 	{
 		model->SetShader(&toonShader);
-		std::cout << model->GetColliderRadius() << std::endl;
+		//std::cout << model->GetColliderRadius() << std::endl;
 	}
 
 	//cam.SetPosition(glm::vec3(7,5,-3));

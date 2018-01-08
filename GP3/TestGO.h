@@ -11,15 +11,17 @@ public:
 	float m_yVelocity = 0;
 	bool m_jumping = false;
 	glm::vec3 m_previousPos; //for collision resolution
+	glm::vec3 m_startingPosition;
 
 	void Start() override
 	{
 		//std::cout << "Called Start!" << std::endl;
 		Audio::LoadSound("MenuMusic", "res/menu.wav");
-		//Audio::PlaySound("MenuMusic", true);
+		Audio::PlaySound("MenuMusic", true);
 		//GetTransform().SetScale(glm::vec3(0.2, 0.2, 0.2));
 
 		m_startingHeight = GetTransform().GetPos()->y;
+		m_startingPosition = *GetTransform().GetPos();
 	}
 
 	void Update(float deltaTime) override
@@ -68,7 +70,15 @@ public:
 
 	void OnCollision(Model* collider) override
 	{
-		GetTransform().SetPos(m_previousPos);
+
+		if (collider->GetName() == "Thorns")
+		{
+			m_yVelocity = 0;
+			GetTransform().SetPos(m_startingPosition);
+			std::cout << "You lost!" << std::endl;
+		}
+		else
+			GetTransform().SetPos(m_previousPos);
 		//collider->Destroy();
 	}
 

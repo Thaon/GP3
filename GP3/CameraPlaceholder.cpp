@@ -9,7 +9,7 @@ void CameraPlaceholder::Start()
 
 void CameraPlaceholder::Update(float deltaTime)
 {
-	GetTransform().SetPos(*m_player->GetTransform().GetPos() + glm::vec3(0, 5, -15));
+	GetTransform().SetPos(*m_player->GetTransform().GetPos() + glm::vec3(0, 15, -15));
 }
 
 void CameraPlaceholder::OnCollision(Model * collider)

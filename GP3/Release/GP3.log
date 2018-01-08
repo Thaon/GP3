@@ -1,7 +1,33 @@
-﻿  Shader.cpp
+﻿  Display.cpp
+..\..\GP3\GP3\Display.cpp(24): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+..\..\GP3\GP3\Display.cpp(25): warning C4244: 'return': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+d:\github\gp3\gp3\TestGO.h(55): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  MainGame.cpp
+d:\github\gp3\gp3\TestGO.h(55): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+..\..\GP3\GP3\MainGame.cpp(60): warning C4244: '=': conversion from 'Uint64' to 'float', possible loss of data
+..\..\GP3\GP3\MainGame.cpp(89): warning C4018: '<': signed/unsigned mismatch
+..\..\GP3\GP3\MainGame.cpp(143): warning C4018: '<': signed/unsigned mismatch
+..\..\GP3\GP3\MainGame.cpp(145): warning C4018: '<': signed/unsigned mismatch
+  Mesh.cpp
+  Model.cpp
+  obj_loader.cpp
+..\..\GP3\GP3\obj_loader.cpp(378): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  Scene.cpp
+d:\github\gp3\gp3\TestGO.h(55): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+..\..\GP3\GP3\Scene.cpp(117): warning C4018: '>': signed/unsigned mismatch
+  SceneManager.cpp
+d:\github\gp3\gp3\TestGO.h(55): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+..\..\GP3\GP3\SceneManager.cpp(25): warning C4018: '>': signed/unsigned mismatch
+..\..\GP3\GP3\SceneManager.cpp(41): warning C4018: '>': signed/unsigned mismatch
+  Shader.cpp
+  Texture.cpp
+  Audio.cpp
+  CameraPlaceholder.cpp
+d:\github\gp3\gp3\TestGO.h(55): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  Input.cpp
+  StaticModel.h
   Generating code
-  2 of 1120 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  All 1123 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   GP3.vcxproj -> D:\GitHub\GP3\Release\GP3.exe
